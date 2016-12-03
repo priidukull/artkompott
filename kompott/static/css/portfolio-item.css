@@ -4,9 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
 
 .portfolio-item {
     margin-bottom: 25px;
@@ -21,9 +18,41 @@ footer {
 }
 
 body {
-    padding-top: 15px;
+    padding: 10px 30px;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: 95% 100%;
+    background-position: 30px 80px;
+}
+
+html {
+    height: 200%;
 }
 
 .search-field {
     padding-left: 15px;
 }
+
+#main-container {
+    padding-top: 280px;
+}
+
+#portfolio {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#search-area {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.glyphicon-search {
+    height: 31px;
+    padding-top: 7px;
+}
+
+.float-right {
+    float: right;
+}
+
