@@ -77,12 +77,15 @@
         <div class="row">
             <div class="search-area">
                 <form class="search small" method="get" action=".">
-                    <input class="input-lg" type="text" name="q" value="{{ query }}">
+                    <div id="the-basics">
+                        <input id="very-center-1" class="input-lg center-block" type="text" placeholder="Name" name="q" value="{{ query }}">
+                    </div>
                     <br>
-                    <input class="input-lg" type="text" name="q" value="{{ query }}">
+                    <input class="input-lg center-block" type="text" placeholder="Category" name="q" value="{{ query }}">
                     <br>
-                    <input class="input-lg" type="text" name="q" value="{{ query }}">
-                    <button type="submit" id="s" class="btn btn-default">
+                    <input class="input-lg center-block" type="text" placeholder="Country" name="q" value="{{ query }}">
+                    <br>
+                    <button type="submit" id="s" class="btn btn-default center-block red">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </form>
@@ -140,10 +143,14 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="/staticjs/jquery.js"></script>
+    <script src="/static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- TypeAhead JavaScript -->
+    <script src="/static/js/typeahead.jquery.js"></script>
+    <script src="/static/js/the-basics.js"></script>
 
 </body>
 
