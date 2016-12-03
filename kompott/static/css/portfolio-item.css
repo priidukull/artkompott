@@ -20,3 +20,10 @@ footer {
     color: #d14;
 }
 
+body {
+    padding-top: 15px;
+}
+
+.search-field {
+    padding-left: 15px;
+}
