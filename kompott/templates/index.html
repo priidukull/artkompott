@@ -70,10 +70,10 @@
         {% endif %}
         <div class="clearfix"></div>
         <!-- Related Projects Row -->
-        <div class="row" id="portfolio" style="padding-top:80px">
+        <div class="row" id="portfolio" style="padding-top:75px">
             <div id="portfolio-size">
                 {% for image, artist in image_data %}
-                    <div class="col-sm-3">
+                    <div class="col-sm-3" style="padding-top:30px;{% if forloop.counter0 == 8 %}margin-left:150px;{% endif %}">
                         <div class="slightly-smaller">
                             <img class="img-responsive portfolio-item" src="/static/img/{{ artist.prefix }}/{{ image }}.jpg" alt="">
                             <div class="art-categories">
@@ -94,8 +94,6 @@
 
         </div>
         <!-- /.row -->
-
-        <hr>
 
     </div>
     <!-- /.container -->
