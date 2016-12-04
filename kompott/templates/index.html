@@ -12,7 +12,7 @@
     <title>Portfolio Item - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="/static/css/portfolio-item.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 
 </head>
 
-<body background="/static/img/bg.png">
+<body>
     <img src="/static/img/logo.png" alt="Logo" style="width:215px;height:50px;">
     <div class="float-right" style="padding:10px">Log In</div>
     <div class="float-right" style="padding:10px">Sign Up</div>
@@ -44,7 +44,7 @@
                         <input class="input-lg search-field" type="text" placeholder="Category" name="q" value="{{ query }}">
                     </div>
                     <div class="col-md-3">
-                        <input class="input-lg search-field" type="text" placeholder="Country" name="q" value="{{ query }}">
+                        <input class="input-lg search-field" type="text" placeholder="Location" name="q" value="{{ query }}">
                     </div>
                     <button type="submit" id="s" class="btn btn-default red">
                         <span class="glyphicon glyphicon-search"></span>
@@ -56,57 +56,22 @@
 
         <!-- Related Projects Row -->
         <div class="row" id="portfolio">
-
-            <div class="col-lg-12">
-                <h3 class="page-header"></h3>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="/static/img/maria-1.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="/static/img/maria-2.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="/static/img/maria-3.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="/static/img/maria-4.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
+            <div id="portfolio-size">
+                {% for image, artist in image_data %}
+                    <div class="col-sm-3">
+                        <div class="slightly-smaller">
+                            <img class="img-responsive portfolio-item" src="/static/img/{{ artist.prefix }}/{{ image }}.jpg" alt="">
+                            <div class="art-categories">
+                                <a class="col-sm-8" href="/category/{{ artist.category }}">
+                                    {{ artist.name }}
+                                </a>
+                                <a class="col-sm-4" href="/category/{{ artist.category }}">
+                                    {{ artist.category }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
 
         </div>
@@ -126,7 +91,6 @@
     <!-- TypeAhead JavaScript -->
     <script src="/static/js/typeahead.jquery.js"></script>
     <script src="/static/js/the-basics.js"></script>
-
 </body>
 
 </html>

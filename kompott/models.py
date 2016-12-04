@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class Artist(models.Model):
+    prefix = models.CharField(max_length=256)
+    name = models.CharField(max_length=256)
+    category = models.CharField(max_length=256)
+    location = models.CharField(max_length=256)
