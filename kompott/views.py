@@ -1,7 +1,13 @@
+import os
+
 from django.shortcuts import render
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://priidukull@localhost:5432/kompott')
+if os.environ.get('ENVIRONMENT') == 'legal_webapp':
+    db_conn_string = 'postgresql://artkompott@localhost:5432/kompott'
+else:
+    db_conn_string = 'postgresql://priidukull@localhost:5432/kompott'
+engine = create_engine(db_conn_string)
 
 
 def index(request):
