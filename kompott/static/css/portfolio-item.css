@@ -18,6 +18,8 @@ body {
     background-repeat: no-repeat;
     background-size: 95% 100%;
     background-position: 30px 80px;
+    font-family: 'Raleway, sans-serif';
+    margin-left:5px;
 }
 
 html {
@@ -55,10 +57,4 @@ html {
     margin-top: 10px;
     height: 95%;
     width: 95%;
-}
-
-.bottom-align-text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }

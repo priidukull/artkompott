@@ -51,7 +51,10 @@ def artist(request, prefix):
     artists = engine.execute("SELECT * FROM artist WHERE prefix='%s'" % prefix)
     image_data = []
     secondary_image_data = []
+    text = False
     for artist in artists:
+        if artist.prefix == 'aleksandra':
+            text = True
         image_data.append(('%s-1' % artist.prefix, artist))
         if artist.prefix == 'liisi':
             continue
@@ -63,5 +66,5 @@ def artist(request, prefix):
             continue
         secondary_image_data.append(('%s-4' % artist.prefix, artist))
     image_data += secondary_image_data
-    context = dict(image_data=image_data)
+    context = dict(image_data=image_data, text=text)
     return render(request, 'index.html', context=context)
