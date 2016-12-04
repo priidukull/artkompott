@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Portfolio Item - Start Bootstrap Template</title>
+    <title>ArtCompote</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.css" rel="stylesheet">
@@ -71,6 +71,9 @@
                             </div>
                         </div>
                     </div>
+                    {% ifequal forloop.counter0|modulo:4 3 %}
+                        <div class="clearfix"></div>
+                    {% endifequal %}
                 {% endfor %}
             </div>
 
@@ -91,6 +94,8 @@
     <!-- TypeAhead JavaScript -->
     <script src="/static/js/typeahead.jquery.js"></script>
     <script src="/static/js/the-basics.js"></script>
-</body>
+    <div class="bottom-align-text col-sm-6">
+        <h3>Some Text</h3>
+    </div></body>
 
 </html>

@@ -1,6 +1,7 @@
 import os
 
 from django.shortcuts import render
+from django.template.defaultfilters import register
 from sqlalchemy import create_engine
 
 if os.environ.get('ENVIRONMENT') == 'legal_webapp':
@@ -8,6 +9,11 @@ if os.environ.get('ENVIRONMENT') == 'legal_webapp':
 else:
     db_conn_string = 'postgresql://priidukull@localhost:5432/kompott'
 engine = create_engine(db_conn_string)
+
+
+@register.filter
+def modulo(num, val):
+    return num % val
 
 
 def index(request):
