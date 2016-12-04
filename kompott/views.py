@@ -47,4 +47,21 @@ def category(request, cat):
     context = dict(image_data=image_data)
     return render(request, 'index.html', context=context)
 
-
+def artist(request, prefix):
+    artists = engine.execute("SELECT * FROM artist WHERE prefix='%s'" % prefix)
+    image_data = []
+    secondary_image_data = []
+    for artist in artists:
+        image_data.append(('%s-1' % artist.prefix, artist))
+        if artist.prefix == 'liisi':
+            continue
+        secondary_image_data.append(('%s-2' % artist.prefix, artist))
+        if artist.prefix in ('ene', 'mirgoods'):
+            continue
+        secondary_image_data.append(('%s-3' % artist.prefix, artist))
+        if artist.prefix in ('aleksandra', 'sofia'):
+            continue
+        secondary_image_data.append(('%s-4' % artist.prefix, artist))
+    image_data += secondary_image_data
+    context = dict(image_data=image_data)
+    return render(request, 'index.html', context=context)

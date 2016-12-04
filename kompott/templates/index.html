@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="/static/css/portfolio-item.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,8 +33,10 @@
     <div class="float-right" style="padding:10px">Log In</div>
     <div class="float-right" style="padding:10px">Sign Up</div>
     <!-- Page Content -->
+    <div style="font-family: 'Raleway', sans-serif; margin-left:5px">
+        Curated designer marketplace.
+    </div>
     <div id="main-container" class="container">
-
         <!-- Portfolio Item Row -->
         <div class="row">
             <div class="search-area" id="search-area">
@@ -64,7 +66,7 @@
                         <div class="slightly-smaller">
                             <img class="img-responsive portfolio-item" src="/static/img/{{ artist.prefix }}/{{ image }}.jpg" alt="">
                             <div class="art-categories">
-                                <a class="col-sm-8" href="/category/{{ artist.category }}">
+                                <a class="col-sm-8" href="/artist/{{ artist.prefix }}">
                                     {{ artist.name }}
                                 </a>
                                 <a class="col-sm-4" href="/category/{{ artist.category }}">
