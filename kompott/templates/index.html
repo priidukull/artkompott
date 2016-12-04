@@ -58,19 +58,27 @@
         </div>
         <!-- /.row -->
         {% if text is True %}
-            <div class="col-md-4" style="margin-left:15px; margin-top:30px;">
-                Aleksandra Kazanina
-                <br>
-                Contact: aleksandra.kazanina@artun.ee
-                <br>
-                Education: Estonian Academy of Art, BA
-                <br>
-                Latest exhibitions: “Metal and Ceramics”, “The Reverse Garden”
+            <div class="col-md-4" style="margin-left:15px; padding-top:100px; font-family: 'Raleway', sans-serif;">
+                <div>
+                    <strong><big>Aleksandra Kazanina</big></strong>
+                    <br>
+                    Contact: aleksandra.kazanina@artun.ee
+                    <br>
+                    Education: Estonian Academy of Art, BA
+                    <br>
+                    Latest exhibitions: “Metal and Ceramics”, “The Reverse Garden”
+                </div>
+                <div style="padding-top:30px">
+                    <strong><big>Portfolio</big></strong>
+                </div>
             </div>
+
+            <div class="clearfix"></div>
+            <!-- Related Projects Row -->
+            <div class="row" id="portfolio">
+        {% else %}
+            <div class="row" id="portfolio" style="padding-top:75px">
         {% endif %}
-        <div class="clearfix"></div>
-        <!-- Related Projects Row -->
-        <div class="row" id="portfolio" style="padding-top:75px">
             <div id="portfolio-size">
                 {% for image, artist in image_data %}
                     <div class="col-sm-3" style="padding-top:30px;{% if forloop.counter0 == 8 %}margin-left:150px;{% endif %}">
